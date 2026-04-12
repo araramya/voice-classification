@@ -20,9 +20,7 @@ training:
   scheduler: "cosine"
   warmup_epochs: 5
   patience: 20
-  loss: "aam_softmax"
-  aam_margin: 0.2
-  aam_scale: 30.0
+  loss: "cross_entropy"
 
 augmentation:
   enable: true
