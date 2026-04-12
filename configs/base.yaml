@@ -1,0 +1,23 @@
+seed: 42
+device: "auto"
+
+audio:
+  sample_rate: 16000
+  max_duration_sec: 3.0
+  min_duration_sec: 0.5
+
+features:
+  n_fft: 512
+  hop_length: 160
+  win_length: 400
+  n_mels: 80
+  n_mfcc: 40
+
+data:
+  data_dir: "data"
+  num_speakers: 50
+  min_utterances_per_speaker: 20
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  num_workers: 0

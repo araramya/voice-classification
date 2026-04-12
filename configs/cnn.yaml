@@ -1,0 +1,28 @@
+_base_: "base.yaml"
+experiment_name: "cnn_mel_spectrogram"
+
+features:
+  feature_type: "mel_spectrogram"
+
+data:
+  batch_size: 64
+
+model:
+  type: "cnn"
+  embedding_dim: 192
+  dropout: 0.3
+
+training:
+  epochs: 80
+  lr: 0.001
+  weight_decay: 0.0002
+  scheduler: "cosine"
+  warmup_epochs: 5
+  patience: 15
+  loss: "cross_entropy"
+
+augmentation:
+  enable: true
+  spec_augment: true
+  freq_mask_param: 15
+  time_mask_param: 20

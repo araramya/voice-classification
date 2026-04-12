@@ -1,0 +1,17 @@
+_base_: "base.yaml"
+experiment_name: "baseline_svm"
+
+features:
+  feature_type: "mfcc"
+
+data:
+  batch_size: 1
+
+model:
+  type: "svm"
+
+training:
+  epochs: 1
+
+augmentation:
+  enable: false

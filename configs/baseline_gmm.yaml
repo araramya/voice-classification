@@ -1,0 +1,17 @@
+_base_: "base.yaml"
+experiment_name: "baseline_gmm"
+
+features:
+  feature_type: "mfcc"
+
+data:
+  batch_size: 1
+
+model:
+  type: "gmm"
+
+training:
+  epochs: 1
+
+augmentation:
+  enable: false

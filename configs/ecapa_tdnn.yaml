@@ -1,0 +1,33 @@
+_base_: "base.yaml"
+experiment_name: "ecapa_tdnn"
+
+features:
+  feature_type: "mel_spectrogram"
+
+data:
+  batch_size: 64
+
+model:
+  type: "ecapa_tdnn"
+  channels: 512
+  embedding_dim: 192
+  scale: 8
+
+training:
+  epochs: 100
+  lr: 0.001
+  weight_decay: 0.0002
+  scheduler: "cosine"
+  warmup_epochs: 5
+  patience: 20
+  loss: "aam_softmax"
+  aam_margin: 0.2
+  aam_scale: 30.0
+
+augmentation:
+  enable: true
+  spec_augment: true
+  freq_mask_param: 15
+  time_mask_param: 20
+  noise_augment: true
+  noise_snr_range: [5, 20]
